@@ -1,0 +1,409 @@
+
+/* -------------------------------- 
+
+Header
+
+-------------------------------- */
+
+.cd-main-header {
+  // position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  // height: $header-height-S;
+  width: 100%;
+  padding: 10px 20px;
+  background: #f6f6f6;
+  border-bottom: 1px solid #e0e0e0;
+  height: 65px;
+    @include flex;
+    @include align-items(center);
+   @include clearfix;
+
+  @include MQ(S) {
+    // position: fixed;
+    height: $header-height-M;
+    padding:0;
+  }
+}
+.cd-logo {
+  float: left;
+  display: block;
+  padding: 5px 5px;
+  img {
+    display: block;
+  }
+
+  @include MQ(S) {
+    margin: 0;
+    padding:22.5px 47px;
+    background: $brand-thick;
+  }
+}
+
+/** main-nav **/
+  
+ .kt-main-nav{
+    @include flex;
+    @include align-items(center);
+    @include justify-content(flex-end);
+    width: 100%;
+   @include MQ(S) {
+   display: flex;
+   height: 120px;
+   background: $white;
+   justify-content: space-between;
+   align-items: center;
+   padding:0 30px;
+   }
+}
+
+.cd-nav-trigger {
+  /* navigation trigger - visible on mobile devices only */
+  float: right;
+  position: relative;
+  display: block;
+  width: 34px;
+  height: 44px;
+  margin-left: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+  color: transparent;
+
+  span, span::before, span::after {
+    /* hamburger icon in CSS */
+    position: absolute;
+    display: inline-block;
+    height: 3px;
+    width: 24px;
+    background: $black-lite;
+  }
+
+  span {
+    /* line in the center */
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -2px;
+    @include transition(background .2s);
+  }
+
+  span::before, span::after {
+    /* other 2 lines */
+    content: '';
+    right: 0;
+  }
+
+  span::before {
+    /* menu icon top line */
+    top: -6px;
+  }
+
+  span::after {
+    /* menu icon bottom line */
+    top: 6px;
+  }
+
+  &.nav-is-visible {
+    span {
+      /* hide line in the center */
+      background: rgba($color-3, 0);
+    }
+
+    span::before, span::after {
+      /* keep visible other 2 lines */
+      background: rgba($color-3, 1);
+    }  
+  }
+
+  @include MQ(S) {
+    display: none;
+  }
+}
+
+.cd-search {
+  // position: relative;
+  margin: 1.2em 5% 0.6em;
+  @media screen and (max-width: 767px) {
+    form{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 58px;
+      transform: translateY(50%);
+      width: 100%;
+      padding: 0px 15px;
+      z-index: 1;
+    }
+  }
+
+  &.is-hidden {
+    // opacity: 0;
+  }
+
+  &::before {
+    /* lens icon */
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 86px;
+    transform: translateY(50%);
+    z-index: 10;
+    height: 16px;
+    width: 16px;
+    background: url('../images/cd-search.svg') no-repeat 0 0;
+  }
+
+  input {
+    padding-left: 32px;
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: .25em;
+    @include box-shadow(0px 0px 6px rgba(27,32,42,.14));
+     @include MQ(S) {
+       box-shadow: none;
+     }
+  
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @include MQ(S) {
+    width: 120px;
+    height: 100%;
+    margin: 0 0 0 35px;
+
+    &.is-hidden {
+      /* reset style */
+      opacity: 1;
+      position: relative;
+    }
+
+    &::before {
+      background-position: 0 0px;
+      left: -1.5em;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    form, input {
+      height: 100%;
+      width: 100%;
+      @include flex();
+      @include align-items(center);
+    }
+
+    input {
+      border: none;
+      border-radius: 0;
+      background-color: $white;
+      border-left: 1px solid tint($color-1, 10%);
+      color: $black-thick;
+      padding-left: 0;
+    }
+  }
+  @include MQ(M) {
+    width: 250px;
+    margin: 0 0 0 0;
+  }
+}
+
+/* -------------------------------- 
+
+Top Navigation
+
+-------------------------------- */
+
+.cd-nav {
+  /* top nav - not visible on mobile devices */ 
+  display: none;
+
+  @include MQ(S) {
+    display: block;
+    float: right;
+    // height: 100%;
+  }
+}
+
+.cd-top-nav { 
+  > li > a::before  {
+    /* reset style */
+    display: none;
+  }
+  @include MQ(S) {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    a.kt-media-object {
+      display: flex;
+      align-items: center;
+      color: $brand-thick;
+    }
+    a.kt-adding_cart{
+      border: 1px solid #e5e5e5;
+      padding: 5px 10px;
+      font-size: $fnt-md;
+      line-height: 28px;
+      color: $gray-lite;
+      @include flex;
+      @include align-items(center);
+      @include justify-content(center);
+      .kt-cart_values{
+        border-radius: 50%;
+        background: $brand-thick;
+        height:18px;
+        width: 18px;
+        color: $white;
+        margin: 0 0 0 8px;
+        font-size: 10px;
+        @extend a.kt-adding_cart;
+        border: none; 
+      }
+    }
+    .fa-home{
+       font-size: 24px;
+    }
+
+    > li {
+      display: inline-block;     
+      margin: 0 15px;
+      &:last-of-type {
+        a.kt-media-object{
+          color: $gray-lite;
+          font-size: $fnt-sm;
+        }
+      }
+    }
+   img {
+       height: 28px;
+       width: 28px;
+       margin:0px;
+     }
+  }
+
+  @include MQ(L) {
+    li:not(.has-children) a:hover {
+      color: $color-2;
+    }
+  }
+}
+
+/** mobile-version **/ 
+  
+.kt-main-wrapper {
+  a.kt-nav_icons{
+    color: $black-thick;
+    margin:0 11px;
+    position: relative;
+    i{
+      color: $black-thick;
+    }
+     @include MQ(S) {
+       display: none;
+     }
+  }
+}
+
+.kt-main-nav {
+  h1 {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 5px;
+    .label-head {
+      color: #999;
+      font-size: 16px;
+      &:after {
+        content: ":";
+        padding: 0 8px;
+      }
+    }
+  }
+}
+.model-head {
+  display: inline;
+  float: right; 
+  width: 53%;
+  .btn {
+    padding: 4px 6px;
+  }
+  .dropdown-menu {
+    min-width: 115px;
+    li {
+      padding:0 6px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .kt-cart_values{
+    border-radius: 50%;
+    background: #00b74f;
+    height: 18px;
+    width: 18px;
+    color: #ffffff;
+    margin: 0;
+    font-size: 9px;
+    border: 2px solid #fff;
+    top: 1px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    align-content: center;
+    right: -12px;
+    justify-content: space-around;
+  }
+}
+
+//For submenus dropdown
+.has-children {
+  position: relative;
+  ul {
+    box-shadow: 0px 0px 6px rgba(27, 32, 42, 0.14);
+    background: #fff;
+    position: absolute;
+    min-width: 125px;
+    top: 100%;
+    right: 0;
+    left: auto;
+    border: 0;
+    border-radius: 3px;
+    display: none;
+    font-size: 14px;
+    z-index: 1;
+    a {
+      display: block;
+      padding: 2px 15px;
+      color: #666;
+      &:hover, &:active {
+        color: $brand-thick !important;
+      }
+    }
+    @include MQ(S) {
+      background-color: #efefef; 
+      box-shadow: none;
+    }
+  }
+   &.selected {
+    ul {
+      display: block;
+    }
+  }
+  a {
+    height: 100%;
+    line-height: 30px;
+  }
+}
+.has-children {
+  &.selected {
+    .caret {
+      background: url(../images/dropdown-caret-active.png) no-repeat scroll 0 0;
+    }
+  }
+  .caret {
+    margin-left: 10px;
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,299 @@
+.checkout-listing ul {
+  > .listing-heading {
+  	@include MQ(S) {
+			border-bottom: 1px solid $table-border-color;
+  	}
+	   > div {
+	    color: $black-thick;
+	    font-size: $fnt-xs;
+	    display: none;
+	    white-space: nowrap;
+	    @include MQ(S) {
+	    	display: inline-block;
+				font-size: $fnt-xxs;
+				line-height:24px;
+				padding:15px;
+	  	}
+	  	@include MQ(M) {
+				font-size: $fnt-sm;
+				padding:15px 25px;
+	  	}
+	  	
+	  }
+	}
+
+	> .listing-body {
+		&:first-child {
+			@include MQ(S) {
+				border-top: 0;
+			}
+		}
+			clear:both;
+			@include box-shadow(0px 1px 7px rgba(27,32,42,.14));
+	    @include border-radius(4px);
+	    margin-top: 15px;
+			@include MQ(S) {
+	      margin-top: 0;
+	      @include border-radius(0px);
+	      border-top: 1px solid $table-border-color;
+				box-shadow: none;
+	    }
+			> div {
+				&.list-img {
+			  	@media screen and (max-width: 767px) {
+			  		padding:20px 0 5px;
+			  	}
+			  	img {
+			  		@media screen and (max-width: 767px) {
+				  		margin:0 auto;
+				  	}
+			  	}
+			  }
+			  &.list-kpn {
+			  	@media screen and (max-width: 767px) {
+			  		border-top: 0;
+			  	}
+			  }
+	  	color: $gray-lite;
+	  	font-size: $fnt-xs;
+	  	display: block;
+	  	margin: 0 20px;
+	  	padding:10px 0;
+	  	border-top: 1px solid $table-border-color;
+	  	@include flex();
+	  	@include align-items(flex-start);
+	  	&.list-trash {
+	  		margin:0;
+				padding: 10px 20px;	
+				border-top: 1px solid $table-border-color;
+				@include MQ(L) {
+					border-top: 0;
+					padding: 15px 25px;	
+				}
+				@include MQ(S) {
+					border-top: 0;
+					padding: 15px;	
+				}
+	  	}
+	  	&:first-child {
+	  		border-top: 0;
+	  		display: inline-block;
+	  		@media screen and (max-width: 767px) {
+		  		display: block;
+		  	}
+		  	:before {
+		  		content: none;
+		  	}
+		  }	
+	  	&:last-child:before {
+		  	content: none;
+		  }	
+	  	&:before {
+	  		content: attr(data-th);
+	  		width: 50%;
+	  		line-height: 26px;
+	  		@include MQ(S) {
+					display: none;
+		  	}
+	  	}
+	  	> .vert-sep:before {
+				content: "|";
+				padding: 0 10px;
+				line-height: 26px;
+	  		@include MQ(S) {
+	  			content: none; 
+	  		}
+	  	}
+	  	> div {
+	  		display: inline-block;
+	  		font-size: $fnt-xs;
+	  		line-height: 26px;
+	  		width: 55%;
+	  		@include MQ(S) {
+					font-size: $fnt-xxs;
+					line-height:24px;
+					width: auto;
+		  	}
+		  	@include MQ(M) {
+					font-size: $fnt-xs;
+		  	}
+		  	
+	  	}
+	  	@include MQ(S) {
+	  		display: inline-block;
+				font-size: $fnt-xxs;
+				line-height:24px;
+				vertical-align: top;
+				border-top:0;
+				margin:0;
+				padding:15px;
+	  	}
+	  	@include MQ(M) {
+				font-size: $fnt-xs;
+				padding:20px 25px;
+	  	}
+			
+	  	.kpn-listing {
+	  		float: left;
+	  		@include MQ(S) {
+		  		float: none;
+		  	}
+	  	}
+	  }
+	}
+}
+
+.listing-heading , .listing-body {
+	.list-img {
+		@include MQ(S) {
+			width: 15%;
+		}
+		@include MQ(M) {
+			width: 16%  !important;
+		}
+		@include MQ(L) {
+			width: 18% !important;
+		}
+		
+	}
+	.list-kpn {
+		@include MQ(S) {
+			width: 9%;
+		}
+		@include MQ(M) {
+			width: 15%;
+		}
+		
+	}
+	.list-uom {
+		@include MQ(S) {
+			width: 7%;
+		}
+		@include MQ(M) {
+			width: 7%;
+		}
+		
+	}
+	.list-kpndesc {
+		@include MQ(S) {
+			width: 15%;
+		}
+		@include MQ(M) {
+			width: 14%;
+		}
+		
+	}
+	.list-cat {
+		@include MQ(S) {
+			width: 10%;
+		}
+		@include MQ(M) {
+			width: 10%;
+		}
+		
+	}
+	.list-room{
+		@include MQ(S) {
+			width: 12%;
+		}
+		@include MQ(M) {
+			width: 10%;
+		}
+		
+	}
+	.list-model{
+		@include MQ(S) {
+			width: 12%;
+		}
+		@include MQ(M) {
+			width: 9%;
+		}
+		
+	}
+	.list-notes {
+		@include MQ(S) {
+			width: 8%;
+		}
+		font-size: 18px;
+		@include MQ(M) {
+			width: 9%;
+		}
+		
+	}
+	.list-trash {
+		width: 100%;
+		> div:before {
+			content: none !important;
+		}
+		i {
+			font-size: 18px !important;
+			@include MQ(L) {
+				line-height: 34px;
+			}
+		}
+		a > span {
+			color: #999;
+			padding-left:15px;
+			font-size: $fnt-xs;
+		}
+		@include MQ(S) {
+			width: 6%;
+			float: right;
+		}
+		@include MQ(L) {
+			width: 4%;
+		}
+		
+	}
+}
+
+.product-listing {
+	.panel-heading {
+		.clearfix.row {
+			display: flex !important;
+			@include align-items(center);
+		}
+	}
+}
+
+/** scroller for table **/
+.scrollbox {
+    @include MQ(S) {
+    	overflow: auto;
+	    width: 100%;
+	    height: 545px;
+	    padding-right: 0 !important; 
+    } 
+}
+.vertical-track {
+    width: 10px;
+    background-color: transparent;
+    left:12px; 
+}
+.vertical-handle {
+    width: 4px;
+    background-color: #D5D6D7;
+    border-radius: 20px;
+}
+
+.sorting-fields {
+	display: inline-block;
+	vertical-align:middle;
+  width: 16px;
+  i {
+  	cursor: pointer;
+  }
+  i.fa-sort-asc {
+  	height: 7px;
+    position: relative;
+    top: 3px;
+    display: block;
+    text-align: center;
+  }
+  i.fa-sort-desc {
+    text-align: center;
+    display: block;
+    position: relative;
+    bottom: 4px;
+  }
+}

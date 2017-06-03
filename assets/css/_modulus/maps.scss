@@ -1,0 +1,54 @@
+.slt-contact_map {
+   padding-bottom: 0;
+  .sln_border-right{
+    border-right:1px solid #d1d8e8;
+    }
+    .slt-thumb_nails{
+      border: none;
+      padding: 50px 25px 0px 25px;
+      margin-bottom: 0px;
+      .map{
+        position:relative;
+          .slt-patch{
+            position: absolute;
+            top:0;
+            left:0;
+            background-color: #284593;
+            color:white;
+            padding:10px 15px;
+            text-transform: uppercase;
+            font-size: 16px;
+            line-height: 26px;
+          }
+       }
+        @media screen and (max-width: 768px) {
+          padding: 25px 0px 0px 0px;
+        }
+    }
+}
+.slt-map_content{
+   padding:30px;
+  .slt_address{
+      padding:20px 0;
+      h5{
+        margin-bottom: 15px;
+        font-size: $fnt-md;
+        line-height: 28px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      padding:15px 5px; 
+      .slt_address{
+          padding:15px 0;
+      }
+    }
+}
+address{
+  color: $black-lite;
+  font-size: $fnt-xs;
+  font-weight: $font-light;
+  line-height: 25px;
+  span{
+    font-weight: $font-medium;
+  }
+}

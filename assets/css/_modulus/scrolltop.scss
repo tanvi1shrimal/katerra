@@ -1,0 +1,21 @@
+/** back-to-top **/
+.backto-top {
+  display: none;
+  background-color: rgba(106,142,49,0.80);
+  padding: 10px 10px;
+  border-radius: 3px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: background-color 0.3s 
+  ease;
+  color: $white;
+  z-index: 99;
+  font-size: 0;
+  &:hover{
+    color: $white;
+  }
+  i.fa{
+    font-size: 22px;
+  }
+}

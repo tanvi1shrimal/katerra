@@ -1,0 +1,102 @@
+.select-full {
+  width: 100%;
+  select {
+    display: none;
+  }
+  .btn-group {
+    position: relative;
+    display: block;
+    .btn {
+      font-size: $fnt-xxs;
+      width: 100%;
+      text-align: left;
+    }
+  }
+}
+
+.filters {
+  position: absolute;
+  right:15px;
+  .btn-default.filter-toggle {
+    border:0;
+    padding: 2px 12px;
+    .fa {
+      font-size: 20px;
+    }
+  }
+  .dropdown-menu {
+    left:inherit;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+}
+
+.product-wrapper {
+  background-color: $white; 
+  .product-listing {
+    padding: 15px 0;
+    @include MQ(M) {
+      padding: 30px 0;
+    }
+    .panel-heading { 
+      margin: 60px 0 15px;
+      padding: 9px 0;
+      border-bottom: 1px solid $panel-inner-border;
+      @include box-shadow(0px 1px 5px rgba(27,32,42,.14));
+      @include border-radius(4px);
+      @include MQ(M) {
+        padding: $panel-heading-padding;
+      }
+      @include MQ(S) {
+        margin:0;
+        float:none;
+        box-shadow: none;
+        @include border-radius(0px);
+      }
+    }
+    .panel-default {
+      @include MQ(S) {
+        @include box-shadow(0px 1px 5px rgba(27,32,42,.14));
+        @include border-radius(4px);
+      }
+    }
+    .panel-footer {
+      padding: 15px 0 0;
+      @include MQ(S) {
+        border-top: 1px solid $panel-inner-border;
+        padding: 20px 10px;
+      }
+      .btn-group {
+        .btn {
+          @media screen and (max-width:767px) {
+            width: 46%;
+          }
+        }
+        .btn + .btn {
+          margin-left: 20px;
+          float: right;
+          @include MQ(S) {
+            float: none;
+          }
+        } 
+      }
+      .btn > span {
+        margin-left: 10px;
+      }
+      .col-sm-6 {
+        padding:0;
+        @include MQ(S) {
+          padding: 0 15px;
+        }
+      }
+      .footpanel-pad-r {
+        @include MQ(S) {
+          padding-right: 5px;
+        }
+        @include MQ(M) {
+          padding-right: 0px;
+        }
+      }
+    }
+  }
+}
+.padd-r {padding-right: 5px;}

@@ -1,0 +1,190 @@
+
+/* -------------------------------- 
+
+Side-bar filter-pannel
+
+-------------------------------- */
+
+.kt-side-nav{
+  background: #fff;
+  display: none;
+  position: fixed;
+  left:0;
+  right:0;
+  top: 0;
+  z-index: 100;
+  height:100%;
+   @include MQ(S) {
+    background: #f9f9f9;
+    display: inherit;
+   }
+   &.open {
+    display: block;
+   }
+}
+#sticky_item {
+  @include MQ(S) {
+        width: 202.5px;
+        height: 100%;
+        position: absolute;
+     &.active {
+        position: fixed;
+        top: 0px;
+      }
+
+      &.inactive {
+        position: absolute;
+        top: inherit;
+        bottom: 40px;
+      }
+    }
+}
+
+/* -------------------------------- 
+
+Sidebar
+
+-------------------------------- */
+.kt-Accordian_pannel{
+   padding: 25px 20px;
+   .nav-accordian-wraper{
+      > a.nav-accordian-parent{
+       color: $black-lite;
+     }
+   }
+  .nav-angle-up {
+    transform:rotate(180deg);
+    transition : all 0.5s;
+  }
+  .nav-angle-down {
+    transform:rotate(0deg);
+    transition : all 0.5s;
+  }
+}
+
+
+/* -------------------------------- 
+
+Accordian
+
+-------------------------------- */
+
+
+#accordion-first{  
+  width: 100%;
+  > ul.accordion{
+    padding: 0px;
+    @include MQ(S) {
+      padding: 20px 0px;
+    }
+  }  
+}
+#accordion-first .accordion-group{
+  border-bottom: 1px solid #eaeaea;
+    @include flex;
+    @include flex-direction(column);
+}
+
+#accordion-first .accordion-heading,
+#accordion-first .accordion-toggle:hover,
+#accordion-first .accordion-heading .accordion-toggle.active {
+    background: none repeat scroll 0% 0% transparent;
+}
+#accordion-first .accordion-heading {
+    font-size: $fnt-md;
+    line-height: 30px;
+    text-align: left;
+    @include inline-flex;
+    @include align-items(center);
+    position: relative;
+    @media screen and (max-width: 768px) {
+       font-size: 16px;
+       line-height: 26px;
+    }
+}
+#accordion-first .accordion-heading{
+  padding: 15px 20px;
+   .accordion-toggle {
+      display: block;
+      width: 100%;
+      cursor: pointer;
+      // padding: 5px 0 5px 0px;
+      color: $black-lite;
+      outline: medium none;
+      text-decoration: none;
+      font-size: 15px;
+      line-height: 22px;
+      font-weight: $font-medium;
+  }
+}
+
+.accordion-heading .fa-angle-down:before {
+  color: #00b74f;
+  @include MQ(S) {
+    color: #333;
+  }
+}
+
+.accordion-heading {
+  em {
+    font-size: 20px;
+    @include MQ(S) {
+      font-size: 14px;
+    }
+  }
+}
+
+#accordion-first .accordion-heading .accordion-toggle.active em {color: $brand-thick;}
+
+.accordion-heading .accordion-toggle > em {
+    color: $black-lite;
+    font-size: 24px;    
+    line-height: 19px;
+    text-align: center;    
+    right: 0;
+    top: 0;
+    // transform: translateY(50%);
+    // -webkit-transform: translateY(50%);
+    // -ms-transform: translateY(50%);
+    // -moz-transform: translateY(50%);
+    position: absolute;
+    @include inline-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+ }
+ 
+/** accordian-body **/
+  
+ #accordion-first .accordion-body {
+   text-align: left;
+   .accordion-inner{
+     padding: 0px 20px 20px 20px;
+   }
+ }
+
+/** sub-categorey-list **/
+ .kt-sub_catogrey_list{
+    > li{
+      margin: 20px 0;
+      > a{
+         color: $black-thick;
+         font-size: $fnt-xs;
+         transition: all 0.4s;
+         &:hover, &:focus {
+           color: $brand-thick;
+           font-weight: $font-medium;
+           transition: all 0.4s;
+         }
+      }
+      &:first-child{
+        margin-top: 0;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }      
+   }
+ }
+
+
+  

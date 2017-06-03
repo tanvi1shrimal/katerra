@@ -1,0 +1,39 @@
+
+/** Basic Button-styles **/
+  
+.kt-btn {  
+  border: {
+    radius: 3px;
+  }
+  padding: 4px 15px;
+  margin: 0 5px; 
+}
+
+/** button-sucess **/
+
+.kt-btn_sucess{
+  background-color: $brand-thick;
+  border-color: $brand-thick;
+  color: $white;
+  &:hover,&:active,&:focus {
+    color: $white;
+  }
+}
+
+/** Button-Medium **/
+
+.kt-btn-md{
+  font-size: $fnt-xs;
+  @include MQ(M) {
+      font-size: $fnt-md;
+    }
+  line-height: 30px;
+}
+
+/** Button-small **/
+  
+.kt-btn-sm{
+  font-size: $fnt-sm;
+  font-weight: $font-medium;
+  line-height: 22px;
+}

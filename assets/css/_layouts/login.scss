@@ -1,0 +1,70 @@
+/* -------------------------------- 
+
+Login 
+
+-------------------------------- */
+
+#login-Banner{
+  background: url('../images/login-banner.png') no-repeat -100px 50%;
+  background-size: cover;
+  height: 100vh;
+  .kt-right-wrapper{
+    background: $white;
+    height: 100vh;
+    @include flex;
+    @include justify-content(center);
+    @include flex-direction(column);
+    padding:0 1em;
+    @include MQ(S) {
+      padding:0 3em;
+    }
+    @include MQ(M) {
+      padding:0 6em;
+    }
+    h1{
+       font: {
+          size: $fnt-md + 14px;
+          weight: $font-medium;
+       }
+       text-transform: uppercase;
+       line-height: 35px;
+       text-align: center;
+    }
+    #tx-form{
+       button{
+          width: 100%;
+          margin: 50px 0 30px 0;
+       }
+       .kt-btn-md{
+          font: {
+            size: $fnt-md + 2px;
+            weight: $font-medium;
+          }
+          line-height: 30px;
+       }
+       .kt-btn{
+          padding: 10px 15px;
+       }
+    }
+  }
+  .kt-left_wrapper{
+    @include flex;
+    @include align-items(center);
+    @include justify-content(flex-start);
+    padding:20px 0 30px 25px;
+    height: auto;
+    img{
+      height: 55px;
+      width: 70px;
+    }
+    background: rgba(255, 255, 255, 0.7);
+     @include MQ(S) {
+       @include justify-content(center);
+       height: 100vh;
+       img{
+         width: auto;
+         height: auto;
+       }
+     }  
+  }
+}

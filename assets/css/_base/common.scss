@@ -1,0 +1,102 @@
+
+/**   Common css for all the pages   **/
+*:focus {outline:0;}
+body {
+  .kt-main-wrapper{
+      background: #fff;
+      @media screen and (min-width: 768px){
+        background: #efefef;
+      }
+  }
+   p {
+       font-size: 14px;
+       line-height: 22px;
+     }    
+    @media screen and (max-width: 768px){
+          p{
+              font-size:12px;
+              line-height:24px;
+          }
+      }     
+ } 
+ 
+ // Font-weights  
+    
+  $font-light: 300; 
+  $font-medium: 500;
+  
+  //font-sizes 
+  
+  $fnt-xxs: 12px;
+  $fnt-xs: 13px;
+  $fnt-sm: 14px; 
+  $fnt-md: 16px;
+
+   
+  // colors 
+  
+  $white: #ffffff;
+  $brand-thick: #00b74f;
+  $gray-lite: #666666;
+  $black-lite: #333333;
+  $black-thick: #999999;
+  
+   // colors
+  
+  $color-1: #3e454c; // Mako
+  $color-2: #1784c7; // Denim
+  $color-3: #ffffff; // White
+  $color-4: #ff7e66; // Salmon
+  
+ // header size
+   
+  $header-height-S: 45px;
+  $header-height-M: 121px;
+  
+  //sidebar size
+  
+  $sidebar-width-M: 110px;
+  $sidebar-width-L: 200px;
+
+  //table size
+  
+  $table-cell-padding-xs: 10px !default;
+  $table-cell-padding-sm: 25px !default;
+  $table-cell-padding-md: 30px !default;
+  
+  // paddings
+  
+  .lp-padding{
+     padding: 0;
+  }
+  
+::selection {
+  color: #fff;
+  background: $brand-thick;
+}
+ /*
+ ========================================================================
+ Typographs css
+ ------------------------------------------------------------------------
+ */
+
+h1{
+   font-size: 18px; 
+   line-height: 28px;
+   font-family: 'Roboto', sans-serif;   
+    @media screen and (max-width: 768px){
+        font-size: 16px;
+        line-height:26px;
+     }
+}
+
+ // screen-size
+  
+ .container-fluid{
+   width: 1350px;
+   max-width: 100%;
+   margin: 0 auto;
+ }
+
+
+
